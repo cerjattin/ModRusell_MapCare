@@ -13,6 +13,9 @@ ConfDibu = mpDibujo.DrawingSpec(thickness=1, circle_radius=1)
 mpMallaFacial = mp.solutions.face_mesh
 MallaFacial = mpMallaFacial.FaceMesh(max_num_faces=1)
 
+
+
+
 while True:
     ret, frame = cap.read()
     frameRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
