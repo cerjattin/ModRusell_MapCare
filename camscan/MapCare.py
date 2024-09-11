@@ -92,25 +92,25 @@ while True:
 
                     # Clasificación de emociones
                     # Molesto
-                    if longitud1 < 19 and longitud2 < 19 and longitud3 > 80 and longitud3 < 95 and longitud4 < 5 and longitud_frente_horizontal  < 50:
+                    if longitud1 < 19 and longitud2 < 19 and longitud3 > 80 and longitud3 < 95 and longitud4 < 5 :
                         cv2.putText(frame, 'Persona molesta', (480, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                         emocion_detectada = True
                         coordenadas_emocion = {'ceja_derecha': (x1, y1), 'ceja_izquierda': (x3, y3), 'boca_extremos': (x5, y5), 'frente': (x9, y9)}
 
                     # Feliz
-                    elif longitud1 > 20 and longitud1 < 30 and longitud2 > 20 and longitud2 < 30 and longitud3 < 30 and longitud3 > 109 and longitud4 > 10 and longitud4 < 20 and longitud_frente_horizontal > 50 :
+                    elif longitud1 > 20 and longitud1 < 30 and longitud2 > 20 and longitud2 < 30 and longitud3 < 30 and longitud3 > 109 and longitud4 > 10 and longitud4 < 20  :
                         cv2.putText(frame, 'Persona feliz', (480, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                         emocion_detectada = True
                         coordenadas_emocion = {'ceja_derecha': (x1, y1), 'ceja_izquierda': (x3, y3), 'boca_extremos': (x5, y5), 'frente': (x9, y9)}
 
                     # Asombrado
-                    elif longitud1 > 35 and longitud2 > 35 and longitud3 > 85 and longitud3 < 90 and longitud4 > 20 and longitud_frente_horizontal > 60 :
+                    elif longitud1 > 35 and longitud2 > 35 and longitud3 > 85 and longitud3 < 90 and longitud4 > 20  :
                         cv2.putText(frame, 'Persona asombrada', (480, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                         emocion_detectada = True
                         coordenadas_emocion = {'ceja_derecha': (x1, y1), 'ceja_izquierda': (x3, y3), 'boca_extremos': (x5, y5), 'frente': (x9, y9)}
 
                     # Triste
-                    elif longitud1 > 25 and longitud1 < 35 and longitud2 > 25 and longitud2 < 35 and longitud3 > 90 and longitud3 < 95 and longitud4 < 5 and longitud_frente_horizontal < 40 :
+                    elif longitud1 > 25 and longitud1 < 35 and longitud2 > 25 and longitud2 < 35 and longitud3 > 90 and longitud3 < 95 and longitud4 < 5  :
                         cv2.putText(frame, 'Persona triste', (480, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
                         emocion_detectada = True
                         coordenadas_emocion = {'ceja_derecha': (x1, y1), 'ceja_izquierda': (x3, y3), 'boca_extremos': (x5, y5), 'frente': (x9, y9)}
