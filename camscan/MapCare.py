@@ -36,6 +36,12 @@ while True:
                 x, y = int(puntos.x * ancho), int(puntos.y * alto)
                 lista.append([id, x, y])
 
+                """""
+                #Dibujar todos los puntos en verde
+                cv2.circle(frame, (x, y), 2, (0, 255, 0), -1)  
+                cv2.putText(frame, f'{id}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+                """""
+
                 if len(lista) == 468:
                     # inicia lógica de detección de emociones
                     # Calcular las longitudes
@@ -83,19 +89,34 @@ while True:
                     boca_extremos = (lista[78][1:], lista[308][1:])
                     boca_apertura = (lista[13][1:], lista[14][1:])
 
-                    
+                    # ------------------------------------------------------
                     # punto pomulo derecho
                     x1, y1 = lista[50][1:]  # Coordenadas del punto 50
                     #pruebas puntos al rededor pomulo
-                    x2, y2 = lista[123][1:]
+                    x2, y2 = lista[187][1:]
                     cv2.circle(frame, (x2, y2), 5, (0, 255, 0), -1)
-                    x4,y4= lista [207][1:]
+                    x4,y4= lista [123][1:]
                     cv2.circle(frame, (x4, y4), 5, (0, 255, 0), -1)
+                    # MOSTRAR LAS LINEAS UNIDAS DE LOS PUNTOS COORDENADAS DE LOS POMULOS
+                    cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
+                    cv2.line(frame, (int(x1), int(y1)), (int(x4), int(y4)), (0, 255, 0), 2)
+                    cv2.line(frame, (int(x2), int(y2)), (int(x4), int(y4)), (0, 255, 0), 2)
+                    # ------------------------------------------------------
                     
                     
+                    
+                    # -------------------------------------------------------
                     #punto pomulo izq
                     x3, y3 = lista[280][1:]  # Coordenadas del punto 280 
-                    
+                    #pruebas puntos al rededor pomulo
+                    x33, y33 = lista[411][1:]
+                    cv2.circle(frame, (x33, y33), 5, (0, 255, 0), -1)
+                    x333, y333 = lista[352][1:]
+                    cv2.circle(frame, (x333, y333), 5, (0, 255, 0), -1)
+                    cv2.line(frame, (int(x3), int(y3)), (int(x33), int(y33)), (0, 255, 0), 2)
+                    cv2.line(frame, (int(x3), int(y3)), (int(x333), int(y333)), (0, 255, 0), 2)
+                    cv2.line(frame, (int(x33), int(y33)), (int(x333), int(y333)), (0, 255, 0), 2)
+                    # ------------------------------------------------------
 
                     # Dibujar círculo en el punto del pómulo derecho
                     cv2.circle(frame, (x1, y1), 5, (0, 255, 0), -1)  # Círculo en el punto 50
